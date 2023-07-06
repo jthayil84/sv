@@ -145,6 +145,7 @@ module tb;
     h2.v_run(); // resolves to contents t1
     
     // person can resolve to anyone
+    $display("person can resolve to any child");
     p = h1;
     p.v_run();
     p = c1;
@@ -153,7 +154,19 @@ module tb;
     p.v_run();
     p = d1;
     p.v_run();
-
+    
+    // Reference copy vs clone
+    $display("Reference copy");
+    e1 = h1;
+    h2 = new h1;
+    h1.age = 44;
+    $display("Updating age of h1");
+    h1.v_run();
+    $display("e1 is a reference copy so it points to same location. Has updated age");
+    e1.v_run();
+    $display("h2 is aclone so it value hasn't been altered. Clone not deep in case it points to other classes");
+    h2.v_run();
+    
   end
  
 endmodule
