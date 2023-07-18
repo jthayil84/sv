@@ -156,7 +156,7 @@ module tb;
     p.v_run();
     
     // Reference copy vs clone
-    $display("Reference copy");
+    $display("Reference copy vs clone");
     e1 = h1;
     h2 = new h1;
     h1.age = 44;
@@ -164,8 +164,12 @@ module tb;
     h1.v_run();
     $display("e1 is a reference copy so it points to same location. Has updated age");
     e1.v_run();
-    $display("h2 is aclone so it value hasn't been altered. Clone not deep in case it points to other classes");
+    $display("h2 is a clone so it value hasn't been altered. Clone not deep in case it points to other classes");
     h2.v_run();
+    
+    //Deep clone
+    $display("Deep clone");
+    $display("Deep clone Requires specialized methods");
     
   end
  

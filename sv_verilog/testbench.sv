@@ -13,14 +13,6 @@ module tb();
   bit clk1 = 0;
   bit[7:0]pa1[4] = '{8'ha, 8'hb, 8'hc, 8'hc};
   
-  int arr1[4];       // Regular array1
-  
-  bit [3:0][31:0]pa; // Packed array 4 of 32-bits
-  int da[];  		 // Dynamic array
-  int q[$];			 // Queue
-  int j = 5;         // Integer 
-  int asso[int];
-  
   // Clock
   always#10 clk = ~clk;
   always#20 clk1 = ~clk1;
